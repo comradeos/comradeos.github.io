@@ -1,0 +1,32 @@
+body {
+    width: 700px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        width: auto;
+        padding: 10px;
+    }
+}
+
+a, a:visited {
+    color: blue;
+}
+
+a:hover {
+    font-weight: bold;
+}
+
+img {
+    width: 100%;
+}
+
+.posts {
+    display: flex;
+    justify-content: space-around;
+}
+
+.author {
+    text-align: right;
+}
