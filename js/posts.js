@@ -16,7 +16,7 @@ function file_get_contents(url) {
 posts = file_get_contents(GOOGLE_SHEET_DATA);
 
 try {
-    for (let i = 0; i < posts.length; i++) {
+    for (let i = posts.length; i >=0; i--) {
         let item = posts[i];
         for (let key in item) {
             let value = item[key];
