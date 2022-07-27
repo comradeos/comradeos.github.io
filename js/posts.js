@@ -25,7 +25,7 @@ try {
         document.write("<hr>");
     }
 } catch (error) {
-    document.write("<h3>Тут зараз нема нічого, але може буде колись, так шо ти заходь час від часу...</h3><hr>");
+    document.write("<hr><h3>Тут зараз нема нічого, але може буде колись, так шо ти заходь час від часу...</h3><hr>");
 }
 
 document.write("<div class=\"posts\">");
