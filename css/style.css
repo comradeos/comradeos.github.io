@@ -27,10 +27,12 @@ img {
     justify-content: space-around;
 }
 
-.author {
-    text-align: right;
-}
+
 
 footer {
     text-align: center;
+}
+
+p.author {
+    text-align: right;
 }
