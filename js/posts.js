@@ -1,9 +1,20 @@
-params = new URLSearchParams(window.location.search)
-index = params.get('index') ? params.get('index') : 1;
-index = parseInt(index);
-limit = index + 10;
+blog_url = "https://comradeos.github.io/?page=1";
+// blog_url = "file:///C:/Software/OpenServer/domains/comradeos.github.io/index.html?page=1";
 
-GOOGLE_SHEET_DATA = `https://sheets.googleapis.com/v4/spreadsheets/14kAxmAOnmcKzVrMXvDOj5UH9wotudkLg5BgBJZS2vIs/values/A${index}:B${limit}?alt=json&key=AIzaSyAGGbFDiCtylTz0CJuF0gmbtscp_LOsyYI`;
+params = new URLSearchParams(window.location.search)
+page = params.get('page') ? params.get('page') : 1;
+
+if (page == 1) {
+    begin = 1; 
+} else if (page > 1) {
+    begin = (parseInt(page) - 1) * 10 + 1;
+} else if (page < 1) {
+    window.location.replace(blog_url);
+}
+
+end = begin + 9;
+
+GOOGLE_SHEET_DATA = `https://sheets.googleapis.com/v4/spreadsheets/14kAxmAOnmcKzVrMXvDOj5UH9wotudkLg5BgBJZS2vIs/values/A${begin}:B${end}?alt=json&key=AIzaSyAGGbFDiCtylTz0CJuF0gmbtscp_LOsyYI`;
 
 function file_get_contents(url) {
     let request = null;
@@ -16,20 +27,20 @@ function file_get_contents(url) {
 posts = file_get_contents(GOOGLE_SHEET_DATA);
 
 try {
-    for (let i = posts.length; i >=0; i--) {
+    for (let i = 0; i <= posts.length; i++) {    
         let item = posts[i];
         for (let key in item) {
             let value = item[key];
-            document.write(value);
+            document.write(value); 
         }
-        document.write("<hr>");
     }
 } catch (error) {
-    document.write("<hr><h3>Тут зараз нема нічого, але може буде колись, так шо ти заходь час від часу...</h3><hr>");
+    alert("Це все...")
+    window.location.replace(blog_url);
 }
 
-document.write("<div class=\"posts\">");
-document.write(`<a href="?index=${index - 10}">Сюди</a>`);
-document.write(`<a href="?index=1">Останнє</a>`);
-document.write(`<a href="?index=${index + 10}">Туди</a>`);
+document.write("<hr><div class=\"posts\">");
+document.write(`<a href="?page=${parseInt(page) - 1}">Сюди</a>`);
+document.write(`<a href="?page=1">Останнє</a>`);
+document.write(`<a href="?page=${parseInt(page) + 1}">Туди</a>`);
 document.write("</div>");

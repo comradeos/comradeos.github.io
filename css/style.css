@@ -1,6 +1,8 @@
 body {
     width: 700px;
     margin: 0 auto;
+    font-size: 17px;
+    line-height: 1.7;
 }
 
 @media screen and (max-width: 800px) {
@@ -27,12 +29,23 @@ img {
     justify-content: space-around;
 }
 
-
-
 footer {
     text-align: center;
 }
 
+
+p.quote {
+    margin: 10px 0 0 0;
+}
+
 p.author {
     text-align: right;
+    margin: 0 0 10px 0;
+}
+
+p.date {
+    text-align: center;
+    background: black;
+    color: #fff;
+    margin: 10px 0 10px 0;
 }
