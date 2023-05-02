@@ -62,3 +62,7 @@ p.date {
     border-radius: 50px;
     /* padding: 7px; */
 }
+
+h3, h4 {
+    text-align: center;
+}
