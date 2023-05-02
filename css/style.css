@@ -18,10 +18,13 @@ body {
 
 a, a:visited {
     color: blue;
+    padding: 3px 30px;
+    border-radius: 50px;
 }
 
 a:hover {
-    font-weight: bold;
+    background: blue;
+    color: white;
 }
 
 img {
