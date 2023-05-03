@@ -46,7 +46,12 @@ p {
 }
 
 p.quote {
-    margin: 10px 0 0 0;
+    margin: 15px 0 0 25px;
+    font-size: 12px;
+}
+
+span.author {
+    margin: 0 0 0 25px;
 }
 
 p.author {

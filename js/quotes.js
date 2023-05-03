@@ -17,4 +17,4 @@ row = Math.floor(Math.random() * posts.length-1) + 1;
 item = posts[row];
 quote = item[0]; // цитата
 author = item[1]; // автор
-document.write("<i>\"" + quote + "\"<br> - " + author +"</i>");
+document.write(quote + "<br> <span class=\"author\">- " + author + "</span>");
