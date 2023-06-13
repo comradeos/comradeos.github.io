@@ -72,3 +72,7 @@ p.date {
 h3, h4 {
     text-align: center;
 }
+
+p, ul, ol {
+    overflow: hidden;
+}
